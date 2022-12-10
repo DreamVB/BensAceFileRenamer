@@ -1,0 +1,19 @@
+Here is a list of naming rule tags and their description
+
+%c		File counter rule you can set the start index and the step range ex File1.txt, File2.txt etc
+%ext		Filename extension in lowercase ex .txt
+%EXT	Filename extension in uppercase ex .TXT
+%fn		Filename in lowercase ex file
+%FN		Filename in uppercase ex file
+%fo		Original filename case no change
+%A		Sort Day name of week ex Mon
+%a		Long day name of week ex Monday
+%B		Sort month name ex Dec
+%b		Long month name ex December
+%d		Day of week in decimal ex 04
+%m		Month as decimal ex 12
+%Y		Sort year as decimal ex 22
+%y		Long year as decimal ex 2022
+%H		Time hour as decimal ex 08
+%M		Time minute ex 12
+%S		Time second ex 04

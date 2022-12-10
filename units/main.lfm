@@ -1,0 +1,318 @@
+object frmmain: Tfrmmain
+  Left = 525
+  Height = 785
+  Top = 155
+  Width = 817
+  Caption = 'Ben''s AceFileRenamer'
+  ClientHeight = 785
+  ClientWidth = 817
+  DesignTimePPI = 144
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '2.2.4.0'
+  object lstFiles: TListView
+    Left = 16
+    Height = 333
+    Top = 328
+    Width = 788
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Columns = <    
+      item
+        Caption = 'Old Filename'
+        Width = 10
+      end    
+      item
+        Caption = 'New Filename'
+        Width = 10
+      end    
+      item
+        Caption = 'Save Path'
+        Width = 10
+      end>
+    LargeImages = ImgList
+    MultiSelect = True
+    ReadOnly = True
+    RowSelect = True
+    SmallImages = ImgList
+    SortType = stText
+    TabOrder = 0
+    ViewStyle = vsReport
+    OnDblClick = lstFilesDblClick
+    OnSelectItem = lstFilesSelectItem
+  end
+  object lblNameRule: TLabel
+    Left = 44
+    Height = 25
+    Top = 72
+    Width = 111
+    Caption = 'Nameing Rule'
+    ParentColor = False
+  end
+  object txtRule: TEdit
+    Left = 168
+    Height = 38
+    Top = 64
+    Width = 624
+    Anchors = [akTop, akLeft, akRight]
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -22
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnChange = txtRuleChange
+    ParentFont = False
+    TabOrder = 1
+    Text = '%fo_%c%ext'
+  end
+  object lblNameRule1: TLabel
+    Left = 168
+    Height = 25
+    Top = 152
+    Width = 40
+    Caption = 'Start:'
+    ParentColor = False
+  end
+  object StartAt: TSpinEdit
+    Left = 224
+    Height = 33
+    Top = 149
+    Width = 75
+    MinValue = 1
+    OnChange = StartAtChange
+    TabOrder = 2
+    Value = 1
+  end
+  object lblNameRule2: TLabel
+    Left = 312
+    Height = 25
+    Top = 151
+    Width = 175
+    Caption = 'Increment Counter By:'
+    ParentColor = False
+  end
+  object IdInc: TSpinEdit
+    Left = 504
+    Height = 33
+    Top = 149
+    Width = 75
+    MinValue = 1
+    OnChange = IdIncChange
+    TabOrder = 3
+    Value = 1
+  end
+  object cmdRename: TButton
+    Left = 16
+    Height = 72
+    Top = 669
+    Width = 89
+    Anchors = [akLeft, akBottom]
+    Caption = 'Rename'
+    OnClick = cmdRenameClick
+    TabOrder = 4
+  end
+  object lblSrcFolder: TLabel
+    Left = 44
+    Height = 25
+    Top = 24
+    Width = 113
+    Caption = 'Source Folder:'
+    ParentColor = False
+  end
+  object txtSrcFolder: TDirectoryEdit
+    Left = 168
+    Height = 33
+    Top = 22
+    Width = 448
+    OnAcceptDirectory = txtSrcFolderAcceptDirectory
+    ShowHidden = False
+    ButtonWidth = 34
+    NumGlyphs = 1
+    Anchors = [akTop, akLeft, akRight]
+    MaxLength = 0
+    TabOrder = 5
+    OnChange = txtSrcFolderChange
+  end
+  object SBar1: TStatusBar
+    Left = 0
+    Height = 36
+    Top = 749
+    Width = 817
+    Panels = <    
+      item
+        Width = 180
+      end>
+    SimplePanel = False
+  end
+  object cmdRemove: TButton
+    Left = 112
+    Height = 72
+    Top = 669
+    Width = 200
+    Anchors = [akLeft, akBottom]
+    Caption = 'Remove Selected'
+    OnClick = cmdRemoveClick
+    TabOrder = 7
+  end
+  object DividerBevel1: TDividerBevel
+    Left = 120
+    Height = 25
+    Top = 115
+    Width = 520
+    Caption = 'File Counter'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object DividerBevel2: TDividerBevel
+    Left = 120
+    Height = 25
+    Top = 203
+    Width = 520
+    Caption = 'Original filename remove and replace'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlue
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object chkRemoveAlpha: TCheckBox
+    Left = 168
+    Height = 29
+    Top = 232
+    Width = 146
+    Caption = 'Remove Alpha'
+    OnChange = chkRemoveAlphaChange
+    TabOrder = 8
+  end
+  object chkRemoveDigits: TCheckBox
+    Left = 328
+    Height = 29
+    Top = 232
+    Width = 146
+    Caption = 'Remove Digits'
+    OnChange = chkRemoveDigitsChange
+    TabOrder = 9
+  end
+  object chkRemoveNoneAlpha: TCheckBox
+    Left = 496
+    Height = 29
+    Top = 232
+    Width = 245
+    Caption = 'Remove None Alpha Digits'
+    OnChange = chkRemoveNoneAlphaChange
+    TabOrder = 10
+  end
+  object lblFind: TLabel
+    Left = 168
+    Height = 25
+    Top = 277
+    Width = 38
+    Caption = 'Find:'
+    ParentColor = False
+  end
+  object txtFind: TEdit
+    Left = 219
+    Height = 33
+    Top = 276
+    Width = 163
+    OnChange = txtFindChange
+    TabOrder = 11
+  end
+  object lblReplace: TLabel
+    Left = 400
+    Height = 25
+    Top = 277
+    Width = 64
+    AutoSize = False
+    Caption = 'Replace:'
+    Font.Height = 25
+    ParentColor = False
+    ParentFont = False
+  end
+  object txtReplace: TEdit
+    Left = 476
+    Height = 33
+    Top = 276
+    Width = 163
+    OnChange = txtReplaceChange
+    TabOrder = 12
+  end
+  object cmdAbout: TButton
+    Left = 320
+    Height = 72
+    Top = 669
+    Width = 88
+    Anchors = [akLeft, akBottom]
+    Caption = 'About'
+    OnClick = cmdAboutClick
+    TabOrder = 13
+  end
+  object lblMask: TLabel
+    Left = 624
+    Height = 25
+    Top = 24
+    Width = 46
+    Anchors = [akTop, akRight]
+    Caption = 'Mask:'
+    ParentColor = False
+  end
+  object cboMask: TComboBox
+    Left = 680
+    Height = 33
+    Top = 22
+    Width = 112
+    Anchors = [akTop, akRight]
+    ItemHeight = 25
+    ItemIndex = 0
+    Items.Strings = (
+      '*'
+      '*.bat'
+      '*.bmp'
+      '*.c'
+      '*.cpp'
+      '*.cs'
+      '*.csv'
+      '*.dll'
+      '*.doc'
+      '*.exe'
+      '*.gif'
+      '*.htm'
+      '*.html'
+      '*.jpg'
+      '*.pas'
+      '*.php'
+      '*.png'
+      '*.rtf'
+      '*.txt'
+      '*.xml'
+    )
+    OnChange = cboMaskChange
+    TabOrder = 14
+    Text = '*'
+  end
+  object ImgList: TImageList
+    Height = 24
+    Width = 24
+    Left = 93
+    Top = 380
+    Bitmap = {
+      4C7A010000001800000018000000AA0100000000000078DADDD6C94EC2501886
+      E17A895E892BA39198B8726BE23538E0CEB87140172E1D1716D044051104A165
+      28743843CBE739B540518CE7C49D8477FBE4E76B1718C6FFFA985B8BD0A990CD
+      1C00C69C8E8FE1507C230CA350C4118532868853448C20640142EA83077D3C1E
+      6EBAC56C6643C79FB613F78B1D520F9CB8207D1B0FFBEBAEB9BDB2A0EC0B3B2C
+      9F7D563A4D9543F82C3B01970583F837787615C5BD55DFDC5A9E57F2C51EFC7C
+      EDF784CD7C07CCEBA15FBB477E6789A8F811673FEE1127EE66FEC4665E17D4ED
+      C4CF5BCD27B3F7783A4E7504FE283B0413D1415BD997372BED938A0E6C757FBC
+      8737DE837FDBE3731379371136E95B1ABE70EBB7E06F37A9AEC16BB22B3059F5
+      32D50588D352F6E39BF3BB5A05BDA6BAAFB887BC9938CDD80E7AEFCABE7CF778
+      AB08DE9415C046BDE7934CB086EC0E3429E836347C47BC8F39ADFC4E5DDD179B
+      A4F7A0537BB4C67BC89BFD6E5DD86FA29AB22F5DD6AD82755E932A606DD90BE8
+      28BB9C5402B54AF0DA55755FDCCC5BF75A79F6AB869FEC916C327B0F51BB16DF
+      2D6DCFAA28FBB3DEBD295BB87EEC4E6CD77A51F6FFD23FFBBB607C004B4659AD
+    }
+  end
+end
